@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --text-sm: 13px;
+  --text-sm--line-height: 20px;
+}
+
+body {
+  /* font-family: "DM Sans Variable", sans-serif; */
+  font-family: "Inter Variable", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.serif {
+  font-family: "Instrument Serif", serif;
+}
