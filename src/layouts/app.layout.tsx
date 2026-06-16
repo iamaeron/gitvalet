@@ -1,6 +1,7 @@
 import SetupPage from "@/views/onboarding/setup";
 import { useRepositoryStore } from "@/stores/repository.stores";
 import SelectDefaultBranch from "@/views/select-default-branch";
+import MainLayout from "./main.layout ";
 
 const AppLayout = () => {
   const repos = useRepositoryStore((state) => state.repos);
@@ -14,16 +15,12 @@ const AppLayout = () => {
     );
   }
 
-  return (
+  return selectedRepo && !selectedRepo.pickedBranch ? (
     <main className="min-h-screen dark:bg-stone-900 dark:text-stone-400 text-sm">
-      {selectedRepo && !selectedRepo.pickedBranch ? (
-        <SelectDefaultBranch />
-      ) : (
-        <div className="min-h-screen dark:bg-stone-950">
-          {selectedRepo?.currentBranch}
-        </div>
-      )}
+      <SelectDefaultBranch />
     </main>
+  ) : (
+    <MainLayout />
   );
 };
 
